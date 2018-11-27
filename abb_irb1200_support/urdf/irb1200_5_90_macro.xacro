@@ -153,14 +153,18 @@
       <axis xyz="0 1 0"/>
       <parent link="${prefix}link_2"/>
       <child link="${prefix}link_3"/>
-      <limit effort="0" lower="-3.491" upper="1.222" velocity="5.236"/>
+      <!-- Original values: <limit effort="0" lower="-3.491" upper="1.222" velocity="5.236"/> -->
+      <!-- Hacked limits for our robot since trac_ik doesn't yet get joint limits from params: -->
+      <limit effort="0" lower="-0.5" upper="1.2" velocity="5.236"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_4">
       <origin xyz="0 0 0.042" rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <parent link="${prefix}link_3"/>
       <child link="${prefix}link_4"/>
-      <limit effort="0" lower="-4.712" upper="4.712" velocity="6.981"/>
+      <!-- Original values: <limit effort="0" lower="-4.712" upper="4.712" velocity="6.981"/> -->
+      <!-- Hacked limits for our robot since trac_ik doesn't yet get joint limits from params: -->
+       <limit effort="0" lower="-2.8" upper="2.8" velocity="6.981"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_5">
       <origin xyz="0.451 0 0 " rpy="0 0 0"/>
