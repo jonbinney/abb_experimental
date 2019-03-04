@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="abb_irb1200_5_90" params="prefix">
+
     <!-- link list -->
     <link name="${prefix}base_link">
       <inertial>
-        <mass value="6.215"/>
-        <origin xyz="-0.04204 8.01E-05 0.07964" rpy="0 0 0"/>
-        <inertia ixx="0.0247272" ixy="-8.0784E-05" ixz="0.00130902" iyy="0.0491285" iyz="-8.0419E-06" izz="0.0472376"/>
+        <mass value="13.7742"/>
+        <origin xyz="-0.028986 0.000596 0.11273"/>
+        <inertia ixx="0.101998" ixy="0.000495482" ixz="0.000311158" iyy="0.13969" iyz="-0.000245375" izz="0.130433"/>
       </inertial>
       <collision name="collision">
         <geometry>
@@ -22,11 +23,12 @@
         </material>
       </visual>
     </link>
+
     <link name="${prefix}link_1">
       <inertial>
-        <mass value="3.067" />
-        <origin xyz="9.77E-05 -0.00012 0.23841" rpy="0 0 0"/>
-        <inertia ixx="0.0142175" ixy="-1.28579E-05" ixz="-2.31364E-05" iyy="0.0144041" iyz="1.93404E-05" izz="0.0104533"/>
+        <mass value="11.8419"/>
+        <origin xyz="0.000877 -0.000631 0.336217"/>
+        <inertia ixx="0.11194" ixy="-4.54988e-05" ixz="0.000280961" iyy="0.0915158" iyz="-0.000109905" izz="0.0876456"/>
       </inertial>
       <collision name="collision">
         <geometry>
@@ -40,11 +42,12 @@
         <material name="yellow"/>
       </visual>
     </link>
+
     <link name="${prefix}link_2">
       <inertial>
-        <mass value="3.909"/>
-        <origin xyz="0.00078 -0.00212 0.10124" rpy="0 0 0"/>
-        <inertia ixx="0.0603111" ixy="9.83431E-06" ixz="5.72407E-05" iyy="0.041569" iyz="-0.00050497" izz="0.0259548"/>
+        <mass value="17.5394"/>
+        <origin xyz="-0.000928 -0.000497 0.250051"/>
+        <inertia ixx="0.493558" ixy="1.32136e-05" ixz="0.000209024" iyy="0.462939" iyz="-0.00179901" izz="0.0894214"/>
       </inertial>
       <collision name="collision">
         <geometry>
@@ -58,11 +61,12 @@
         <material name="yellow"/>
       </visual>
     </link>
+
     <link name="${prefix}link_3">
       <inertial>
-        <mass value="2.944"/>
-        <origin xyz="0.02281 0.00106 0.05791" rpy="0 0 0"/>
-        <inertia ixx="0.00835606" ixy="-8.01545E-05" ixz="0.00142884" iyy="0.016713" iyz="-0.000182227" izz="0.0126984"/>
+        <mass value="7.46365"/>
+        <origin xyz="0.099588 0.001143 0.032333"/>
+        <inertia ixx="0.0252424" ixy="0.000142737" ixz="-0.00565542" iyy="0.0906438" iyz="0.000142213" izz="0.0825079"/>
       </inertial>
       <collision name="collision">
         <geometry>
@@ -76,11 +80,12 @@
         <material name="yellow"/>
       </visual>
     </link>
+
     <link name="${prefix}link_4">
       <inertial>
-        <mass value="1.328"/>
-        <origin xyz="0.2247 0.00015 0.00041" rpy="0 0 0"/>
-        <inertia ixx="0.00284661" ixy="-2.12765E-05" ixz="-1.6435E-05" iyy="0.00401346" iyz="1.31336E-05" izz="0.0052535"/>
+        <mass value="2.74436"/>
+        <origin xyz="0.381678 0.001261 0.005168"/>
+        <inertia ixx="0.00573099" ixy="-0.000131119" ixz="0.000380232" iyy="0.0118352" iyz="-2.26565e-05" izz="0.0114428"/>
       </inertial>
       <collision name="collision">
         <geometry>
@@ -94,11 +99,12 @@
         <material name="yellow"/>
       </visual>
     </link>
+
     <link name="${prefix}link_5">
       <inertial>
-        <mass value="0.546"/>
-        <origin xyz="-0.00109 3.68E-05 6.22E-05" rpy="0 0 0"/>
-        <inertia ixx="0.000404891" ixy="1.61943E-06" ixz="8.46805E-07" iyy="0.000892825" iyz="-1.51792E-08" izz="0.000815468"/>
+        <mass value="0.62953"/>
+        <origin xyz="0.011197 -0.001056 0.000109"/>
+        <inertia ixx="0.000502815" ixy="-1.03173e-05" ixz="-8.74347e-08" iyy="0.00108856" iyz="2.07657e-07" izz="0.000918873"/>
       </inertial>
       <collision name="collision">
         <geometry>
@@ -112,12 +118,21 @@
         <material name="yellow"/>
       </visual>
     </link>
+
     <link name="${prefix}link_6">
       <inertial>
         <mass value="0.137"/>
         <origin xyz="-0.00706 -0.00017 -1.32E-06" rpy="0 0 0"/>
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
+      <!--
+      Meshlab calculated values make the robot crash when rotating this joint.
+      <inertial>
+        <mass value="0.00686711"/>
+        <origin xyz="-0.00250976 -1.89e-06 0.00010218"/>
+        <inertia ixx="1.3517e-06" ixy="-1.21316e-11" ixz="9.18065e-12" iyy="6.89813e-07" iyz="-1.21534e-10" izz="6.90097e-07"/>
+      </inertial>
+      -->
       <collision name="collision">
         <geometry>
           <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_6.stl"/>
@@ -140,7 +155,7 @@
       <parent link="${prefix}base_link"/>
       <child link="${prefix}link_1"/>
       <limit effort="10000" lower="-2.967" upper="2.967" velocity="5.027"/>
-      <dynamics damping="1.0" friction="1.0"/>
+      <dynamics damping="50.0" friction="1.0"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_2">
       <origin xyz="0 0 0.399" rpy="0 0 0"/>
@@ -148,7 +163,7 @@
       <parent link="${prefix}link_1"/>
       <child link="${prefix}link_2"/>
       <limit effort="10000" lower="-1.745" upper="2.269" velocity="4.189"/>
-      <dynamics damping="1.0" friction="1.0"/>
+      <dynamics damping="50.0" friction="1.0"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_3">
       <origin xyz="0 0 0.448" rpy="0 0 0"/>
@@ -158,7 +173,7 @@
       <!-- Original values: <limit effort="0" lower="-3.491" upper="1.222" velocity="5.236"/> -->
       <!-- Hacked limits for our robot since trac_ik doesn't yet get joint limits from params: -->
       <limit effort="10000" lower="-0.5" upper="1.2" velocity="5.236"/>
-      <dynamics damping="1.0" friction="1.0"/>
+      <dynamics damping="10.0" friction="1.0"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_4">
       <origin xyz="0 0 0.042" rpy="0 0 0"/>
@@ -168,7 +183,7 @@
       <!-- Original values: <limit effort="0" lower="-4.712" upper="4.712" velocity="6.981"/> -->
       <!-- Hacked limits for our robot since trac_ik doesn't yet get joint limits from params: -->
        <limit effort="10000" lower="-2.8" upper="2.8" velocity="6.981"/>
-      <dynamics damping="1.0" friction="1.0"/>
+      <dynamics damping="5.0" friction="1.0"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_5">
       <origin xyz="0.451 0 0 " rpy="0 0 0"/>
@@ -176,7 +191,7 @@
       <parent link="${prefix}link_4"/>
       <child link="${prefix}link_5"/>
       <limit effort="10000" lower="-2.269" upper="2.269" velocity="7.069"/>
-      <dynamics damping="1.0" friction="1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_6">
       <origin xyz="0.082 0 0 " rpy="0 0 0"/>
